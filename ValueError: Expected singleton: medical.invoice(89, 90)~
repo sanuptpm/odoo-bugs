@@ -1,7 +1,0 @@
-ValueError: Expected singleton: medical.invoice(89, 90)
-
-
-Your variable self is not a singleton, it has two. You have to do
-
-for x in self:
-   x.variable
