@@ -1,0 +1,14 @@
+AccessError: (u"Database fetch misses ids (u'43') and has extra ids (43), may be caused by a type incoherence in a previous request", None)
+===========================================================================================================================================
+qcontext = request.params.copy()
+resp = request.env['res.partner'].sudo().browse(qcontext["id"])
+resp.write({'name': "new name"})
+
+AccessError: (u"Database fetch misses ids (u'43') and has extra ids (43), may be caused by a type incoherence in a previous request", None)
+===========================================================================================================================================
+Getting error because of the type error from browse value
+=========================================================
+
+qcontext = request.params.copy()
+resp = request.env['res.partner'].sudo().browse(int(qcontext["id"]))
+resp.write({'name': "new name"})
